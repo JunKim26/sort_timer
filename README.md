@@ -4,4 +4,4 @@ For this project, I imported the *time* and *random* modules. Additionally, I in
 
 The sort_timer function times how many milliseconds it takes the decorated function to run. The decorator's wrapper function returns the elapsed time.
 
-The function **compare_sorts** takes the two decorated sort functions as parameters and generates a graph comparing their sort times.
+The function **compare_sorts** takes the two decorated sort functions as parameters and generates a graph comparing their sort times. The graph generation may take up to a minute.
