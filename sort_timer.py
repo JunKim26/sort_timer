@@ -90,14 +90,20 @@ def  compare_sorts(bubble,insert):
         bubble(list_1)
         insert(list_2)
 
+def main():
 
-#list to store time it took to run bubble and insertion sort
-bubble = []
-insertion = []
-compare_sorts(bubble_sort,insertion_sort)
+    #list to store time it took to run bubble and insertion sort
+    bubble = []
+    insertion = []
+    compare_sorts(bubble_sort,insertion_sort)
 
-test_list = [1000,2000,3000,4000,5000,6000,7000,8000,9000,10000]
+    test_list = [1000,2000,3000,4000,5000,6000,7000,8000,9000,10000]
 
-pyplot.plot(test_list,bubble, 'ro--', linewidth=2)
-pyplot.plot(test_list,insertion, 'go--', linewidth=2)
-pyplot.show()
+    pyplot.plot(test_list,bubble, 'ro--', linewidth=2)
+    pyplot.plot(test_list,insertion, 'go--', linewidth=2)
+    pyplot.show()
+    
+
+if __name__ == '__main__':
+    main()
+
