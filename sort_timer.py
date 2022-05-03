@@ -20,25 +20,26 @@ def sort_timer(func):
         start = perf_counter()
         result = func(*args)
         end = perf_counter()
-
-        if func.__name__ == "bubble_sort":                                      # adds wrap to bubbles or insertion depending on function name
-            bubble.append((end - start))                                        # Subtracting the begin time from the end time will give you the elapsed time in seconds.
+        
+        # adds wrap to bubbles or insertion depending on function name
+        if func.__name__ == "bubble_sort":                                     
+            bubble.append((end - start))                                       
         else:
             if func.__name__ == "insertion_sort":
-                insertion.append((end - start))                                 # Subtracting the begin time from the end time will give you the elapsed time in seconds.
+                insertion.append((end - start))                                 
 
     return wrapper
 
 
 
 
-                                                                                # define function for insertion sort and decorate with sort timer
+# define function for insertion sort and decorate with sort timer
 @sort_timer
 def insertion_sort(a_list):
     """sorts a list using insertion sort from greatest to least"""
 
 
-    for index in range (1, len(a_list)):                                        # cycles through every index in the list
+    for index in range (1, len(a_list)):                                        
         value = a_list[index]
         pos = index - 1
 
@@ -51,7 +52,7 @@ def insertion_sort(a_list):
         a_list[pos + 1] = value
 
 
-                                                                                #define function for bubble sort and decorate with sort timer
+#define function for bubble sort and decorate with sort timer
 @sort_timer
 def bubble_sort(a_list):
     """sorts a list using bubble sort from greatest to least"""
@@ -82,14 +83,17 @@ def  compare_sorts(bubble,insert):
         list_1 = []
 
         for number in range(1,thousand+1):
-            list_1.append(random.randint(1, 10000))                             #generates a random number of integers matching value on test list
-
-        list_2 = list(list_1) #makes copy of list
+             #generates a random number of integers matching value on test list
+            list_1.append(random.randint(1, 10000))                            
+        
+        #makes copy of list
+        list_2 = list(list_1)
 
 
         bubble(list_1)
         insert(list_2)
 
+        
 def main():
 
     #list to store time it took to run bubble and insertion sort
